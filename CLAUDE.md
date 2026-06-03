@@ -19,11 +19,15 @@ Non-technical marketing professionals who build through Lovable's AI prompting i
 ## Tech stack
 
 - **Vite** + **React 18** + **TypeScript**
-- **Tailwind CSS v3** with a full brand config
+- **Tailwind CSS v4** via `@tailwindcss/vite`, with the v3-style brand config (`tailwind.config.ts`) pulled in through the `@config` directive in `src/index.css`
 - **framer-motion** for button hover animations
 - **clsx** for conditional classnames
 - Tailwind plugins: `@tailwindcss/typography`, `@tailwindcss/forms`, `@tailwindcss/aspect-ratio`
 - Path alias: `~/` resolves to `./src`
+
+### Runtime
+
+Runs on **Vite 7 + TanStack Start** via `@lovable.dev/vite-tanstack-config`. The SSR entry is `src/server.ts` and routing is file-based under `src/routes/` (`__root.tsx` is the root layout, `index.tsx` is `/`). Do **not** reintroduce `vinxi`, `app.config.ts`, `next/*` imports, or a `src/pages/` directory — none of those work in this sandbox.
 
 ---
 
