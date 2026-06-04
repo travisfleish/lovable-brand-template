@@ -4,6 +4,7 @@ type LineBlockProps = {
   steps?: number;      // number of lines (14 | 20 | 30 recommended)
   color?: string;      // brand token name e.g. "blue", "brightGreen"
   rotation?: number;   // degrees — 45 is the canonical brand angle
+  clip?: boolean;      // clip to bounding box — false (default) lets lines bleed freely
   className?: string;
   minStroke?: number;  // thinnest line (px in viewBox units)
   maxStroke?: number;  // thickest line
@@ -13,6 +14,7 @@ export default function LineBlock({
   steps = 20,
   color = "blue",
   rotation = 0,
+  clip = false,
   className = "",
   minStroke = 0.8,
   maxStroke = 5,
@@ -23,7 +25,7 @@ export default function LineBlock({
   const scale = Math.abs(rotation) === 45 ? 1.85 : Math.abs(rotation) === 90 ? 1 : 1;
 
   return (
-    <div className={`overflow-hidden ${className}`}>
+    <div className={`${clip ? "overflow-hidden" : ""} ${className}`}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 200 150"
