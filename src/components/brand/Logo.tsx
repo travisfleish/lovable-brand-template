@@ -29,6 +29,14 @@ const logoMap: Record<LogoVariant, Record<LogoColor, Record<LogoSize, string>>> 
   },
 };
 
+// Brand minimum widths (px) — vertical 110, horizontal/wordmark 70, marque 40
+const minWidths: Record<LogoVariant, number> = {
+  vertical: 110,
+  horizontal: 70,
+  wordmark: 70,
+  marque: 40,
+};
+
 function Logo({
   variant = "horizontal",
   color = "blue",
@@ -37,7 +45,7 @@ function Logo({
   alt = "Genius Sports",
 }: LogoProps) {
   const src = logoMap[variant][color][size];
-  return <img src={src} alt={alt} className={className} />;
+  return <img src={src} alt={alt} className={className} style={{ minWidth: minWidths[variant] }} />;
 }
 
 export default Logo;
