@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import Section from "~/components/layouts/Section";
 import Logo from "~/components/brand/Logo";
+import Button from "~/components/elements/Button";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -31,6 +32,15 @@ function LandingPage() {
         <p className="font-body text-[18px] text-white/70 max-w-xl mb-16">
           A Lovable-ready starter template with Genius Sports' brand foundations built in.
         </p>
+        <div className="w-fit mb-16">
+          <Button
+            type="default"
+            background_color="white"
+            link={{ url: "https://lovable-brand-kit.vercel.app/", target: "_blank" }}
+          >
+            View Brand Resources
+          </Button>
+        </div>
         <p className="font-body text-[14px] text-white/40">
           Start building — every component, token, and font is ready to use.
         </p>
