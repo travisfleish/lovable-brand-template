@@ -19,7 +19,7 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@lovable.dev/vite-tanstack-config": "2.6.4",
+    "@lovable.dev/vite-tanstack-config": "2.7.1",
     "@tailwindcss/vite": "^4.2.4",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/forms": "^0.5.11",
